@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Students</title>
+    <title>CMS</title>
+    <style>
+      .notification-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Students</h1>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Group</th>
-          <th>Name</th>
-          <th>Gender</th>
-          <th>Birthday</th>
-          <th>Status</th>
-          <th>Options</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>KN-21</td>
-          <td>John Smith</td>
-          <td>M</td>
-          <td>11.05.2004</td>
-          <td>O James Bond</td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <td>KN-22</td>
-          <td>Ann Bond</td>
-          <td>M</td>
-          <td>24.04.2004</td>
-          <td></td>
-          <td>X</td>
-        </tr>
-      </tbody>
-    </table>
+    <header>
+      <div class="header-left">
+        <span>CMS</span>
+      </div>
+      <div class="header-right">
+        <div class="profile-dropdown">
+          <img src="profile-icon.png" alt="Profile">
+          <span>Name Surname</span>
+          <ul>
+            <li>Profile</li>
+            <li>Logout</li>
+          </ul>
+        </div>
+        <div class="notifications">
+          <img src="bell-icon.png" alt="Notifications">
+          <span class="notification-badge">3</span>
+          <ul>
+            <li>Notification 1</li>
+            <li>Notification 2</li>
+            <li>Notification 3</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Rest of the page -->
   </body>
 </html>
