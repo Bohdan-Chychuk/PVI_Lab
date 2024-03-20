@@ -4,17 +4,19 @@
 }
 
 .header {
+  
   background-color: grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header.UserName{
-  text-align: center;
 
+.header-profile{
+  border: none;
+  background: none;
+  text-align: right;
 }
-
 
 .header_cell-notification{
 
