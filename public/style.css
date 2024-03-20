@@ -9,6 +9,7 @@
 justify-content: space-between;
 }
 .header_cell-notification{
+  justify-content: flex-end;
     color: white;
     border: none;
     background: none;
