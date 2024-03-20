@@ -5,10 +5,12 @@
 
 .header {
     background-color: grey;
+    display: flex;
 
 }
 .header_cell-notification{
     color: white;
     border: none;
     background: none;
+    
 }
