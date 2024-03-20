@@ -10,17 +10,9 @@
   align-items: center;
 }
 
-/* Змінюємо порядок h1 на перший */
-.header h1 {
-  order: 1;
+.header_buttons {
+  display: flex;
 }
-
-/* Змінюємо порядок кнопок на другий */
-.header .header_cell-notification,
-.header .header-profile {
-  order: 2;
-}
-
 
 
 
