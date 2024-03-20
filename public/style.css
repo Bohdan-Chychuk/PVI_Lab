@@ -4,15 +4,24 @@
 }
 
 .header {
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* Змінюємо порядок h1 на перший */
 .header h1 {
-  justify-content: start;
+  order: 1;
 }
+
+/* Змінюємо порядок кнопок на другий */
+.header .header_cell-notification,
+.header .header-profile {
+  order: 2;
+}
+
+
 
 
 .header_cell-notification{
