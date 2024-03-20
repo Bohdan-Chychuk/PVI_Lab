@@ -8,6 +8,9 @@
     display: flex;
 justify-content: space-between;
 }
+.fbx{
+  justify-content: end;
+}
 .header_cell-notification{
   justify-content: space-evenly;
     color: white;
