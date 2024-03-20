@@ -10,7 +10,10 @@
   align-items: center;
 }
 
+.header.UserName{
+  text-align: center;
 
+}
 
 
 .header_cell-notification{
