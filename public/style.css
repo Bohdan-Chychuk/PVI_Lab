@@ -6,13 +6,22 @@
 .header {
     background-color: grey;
     display: flex;
-justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
 }
-.fbx{
-  justify-content: end;
+
+
+.header h1 {
+  order: 1; /* Змінюємо порядок h1 на перший */
 }
+
+.header .header_cell-notification,
+.header .header-profile {
+  order: 2; /* Змінюємо порядок кнопок на другий */
+}
+
 .header_cell-notification{
-  justify-content: space-evenly;
+
     color: white;
     border: none;
     background: none;
