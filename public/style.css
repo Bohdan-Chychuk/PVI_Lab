@@ -6,19 +6,11 @@
 .header {
     background-color: grey;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 
-.header h1 {
-  order: 1; /* Змінюємо порядок h1 на перший */
-}
-
-.header .header_cell-notification,
-.header .header-profile {
-  order: 2; /* Змінюємо порядок кнопок на другий */
-}
 
 .header_cell-notification{
 
