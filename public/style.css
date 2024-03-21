@@ -4,19 +4,29 @@
 }
 
 .header {
-  
+  height: 50px;
   background-color: grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
-
+.header_buttons{
+  display: flex;
+}
+.UserName{
+  font: 18px TimesNewRoman;
+padding-top: 2px;
+}
 
 .header-profile{
   border: none;
   background: none;
-  text-align: right;
+
+
+
 }
+
 
 .header_cell-notification{
 
