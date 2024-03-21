@@ -11,7 +11,7 @@
    <h1 class="CMS">CMS</h1>
    <div class="header_buttons">
     <button class="header_cell-notification ">
-     <img src="assets/notification-bell-svgrepo-com.svg" height="40" width="40" alt="">
+     <img src="assets/notification-bell-svgrepo-com.svg" height="40" width="40"  alt="">
    </button>
     <button class="header-profile ">
      <img src="assets/profile-circle-svgrepo-com.svg" height="40" width="40" alt="">
@@ -23,7 +23,144 @@
   </div>
   </header>
 
-  <main class="main container"></main>
+  <main class="main container ">
+    <div class="lrmw">
+    <div class="left_side_link_list ">
+      <a href="#" class="main_left_menu_Dashboard"> Dashboard</a>
+      <a href="#" class="main left menu Students"> Students</a>
+      <a href="#" class ="main_left_menu_Tasks"> Tasks</a>
+    </div>
+
+    <div class="right" >
+<h1 class="PageNameMain">Students</h1>
+<div class="button_add_container">
+  <button id="myBtn" class="add">+</button>
+</div>
+<div class="Table">
+  <table>
+    <tr>
+        <th><input type="checkbox"></th>
+        <th>Group</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Birthday</th>
+        <th>Status</th>
+        <th>Options</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div class="buttonin1row">
+          <button ><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+          <button ><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td >
+          <div class="buttonin2row">
+            <button ><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+            <button ><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div class="buttonin3row">
+            <button ><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+            <button ><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+            </div>
+        </td>
+      </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div class="buttonin4row">
+            <button ><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+            <button ><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>
+
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" >&times;</span>
+      <h1 style="font-size: 14;">Add Student</h1>
+      <hr style="height:4px;border-width:0;color:gray;background-color:gray">
+<div class="infomodal">
+      <div class="add-group">
+          <label for="Group">Group:</label>
+            <select name="Group" id="Group">
+            <option value="PZ-27">PZ-27</option>
+            <option value="BD-24">BD-24</option>
+            <option value="KI-301">KI-301</option>
+            <option value="KI-301">PZ-26</option>
+         </select><br><br>
+      </div>
+      <div class="FName">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+      </div>
+      <div class="LName">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+      </div>
+      <div class="add-gender">
+        <label for="Gender">Gender:</label>
+          <select name="Gender" id="Gender">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+       </select><br><br>
+    </div>
+    <div class="add-birthday">
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday">
+    </div>
+   
+
+</div>
+<hr style="height:4px;border-width:0;color:gray;background-color:gray">
+<button id="createBtn" >Create</button>
+      <!-- Тут можна додати форму для введення даних про студента -->
+    </div>
+  </div>
+
+  <div class="buttons-change-table-page" style="display: flex;padding-left: 50%;padding-top: 10px;">
+    <button><</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>></button>
+  </div>
+  </main>
   <footer class="footer container"></footer>
 </body>
+<script src="student.js"></script>
 </html>

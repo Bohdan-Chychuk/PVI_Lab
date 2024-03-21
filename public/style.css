@@ -36,3 +36,141 @@ padding-top: 2px;
     
 }
 
+/*мЕЙН*/
+a{text-decoration: none;
+color: black;
+}
+.left_side_link_list{
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 20px;
+  
+}
+
+.main_left_menu_Dashboard:active,
+.main_left_menu_Students:active,
+.main_left_menu_Tasks:active {
+    font-weight: bold; /* Жирний текст при натисканні */
+}
+a.Students{
+ font-weight: 700;
+;}
+
+.PageNameMain{
+padding-top: 40px;
+font-size: 25px;
+padding-left: 100 px;
+font-weight: normal;
+}
+.lrmw{display: flex;}
+.right{
+  padding-left: 100px;
+}
+button.add{
+  
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+
+}
+.button_add_container{
+  position: absolute;
+  top: 118px;
+  right: 110px;
+}
+/*Таблиця*/
+table {
+ 
+  border-collapse: collapse;
+  width: 256%;
+  height:450px;
+  
+}
+td, th {
+  border: 1px solid black;
+  text-align: center;
+}
+.Table{
+  padding-top: 0px;
+
+;}
+.Table button{
+  
+  
+  width: 40px;
+  height: 40px;
+}
+
+.icon-button {
+  background-color: transparent;
+
+  cursor: pointer;
+  font-size: 16px;
+  color: #333; /* Змініть колір за потреби */
+  
+}
+
+.icon-button i {
+  margin-right: 5px; /* Додайте деякий відступ між іконкою та текстом */
+}
+
+.buttonin1row,.buttonin2row,.buttonin3row,.buttonin4row{
+  visibility: hidden;
+}
+
+/* CSS */
+.modal {
+  display: none; /* Приховано за замовчуванням */
+  position: fixed; /* Залишайтеся на місці */
+  z-index: 1; /* Сидіть на вершині */
+  padding-top: 100px; /* Розташуйте модальне вікно вверху */
+  left: 0;
+  top: 0;
+  width: 100%; /* Повна ширина */
+  height: 100%; /* Повна висота */
+  overflow: auto; /* Додайте прокрутку, якщо потрібно */
+  background-color: rgb(0,0,0); /* Чорний з невеликим прозорим фоном */
+  background-color: rgba(0,0,0,0.4); /* Чорний з невеликим прозорим фоном */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.infomodal
+{
+  
+  font: 20px TimesNewRoman;
+  display: flex;
+  flex-direction: column;
+}
+#Group {
+  width: 120px;  /* Змініть на бажану ширину */
+  height: 20px;  /* Змініть на бажану висоту */
+}
+#fname{ width: 120px;  /* Змініть на бажану ширину */
+  height: 15px;  /* Змініть на бажану висоту */}
+#lname{ width: 120px;  /* Змініть на бажану ширину */
+    height: 15px;  /* Змініть на бажану висоту */}
+  
+#Gender{ width: 120px;  /* Змініть на бажану ширину */
+  height: 20px;  /* Змініть на бажану висоту */}
