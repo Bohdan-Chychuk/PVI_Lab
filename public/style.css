@@ -41,6 +41,8 @@ a{text-decoration: none;
 color: black;
 }
 .left_side_link_list{
+
+position: absolute;
   padding-top: 60px;
   display: flex;
   flex-direction: column;
@@ -65,8 +67,9 @@ padding-left: 100 px;
 font-weight: normal;
 }
 .lrmw{display: flex;}
+
 .right{
-  padding-left: 100px;
+  padding-left: 150px;
 }
 button.add{
   
@@ -77,18 +80,22 @@ button.add{
 }
 .button_add_container{
   position: absolute;
+  
   top: 118px;
-  right: 110px;
+  right: 3%;
 }
 /*Таблиця*/
 table {
- 
+  position:fixed;
+  right: 2%;
+  left: 150px;
   border-collapse: collapse;
-  width: 256%;
+  width: 87%;
   height:450px;
   
 }
 td, th {
+  
   border: 1px solid black;
   text-align: center;
 }
@@ -174,3 +181,5 @@ td, th {
   
 #Gender{ width: 120px;  /* Змініть на бажану ширину */
   height: 20px;  /* Змініть на бажану висоту */}
+
+  /*Кнопки навігацфя таблиці*/
