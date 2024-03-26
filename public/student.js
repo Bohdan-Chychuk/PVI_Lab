@@ -3,6 +3,8 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
+
+
 btn.onclick = function() {
   modal.style.display = "block";
 }
@@ -14,8 +16,113 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  
   }
 }
+
+let indexfordelete
+//Модальне видалити студента
+var modalDelStudent=document.getElementById("myModalDeleteStudent");
+var delStudentButtons = document.getElementsByClassName("DelStudent");
+for (let i = 0; i < delStudentButtons.length; i++) {
+  delStudentButtons[i].onclick = function() {
+    // Get the message element
+    var message = document.getElementById("Massage");
+   
+    // Set the message text
+    indexfordelete = (currentPage * 4) + i ;
+    var name = students[indexfordelete].firstName + " " + students[indexfordelete].lastName;
+    message.innerText = "Ви дійсно хочете видалити користувача " + name + "?";
+    modalDelStudent.style.display = "block";
+  };
+  
+}
+document.getElementById("DeketeBtn").addEventListener('click', function() {
+ 
+  students.splice(indexfordelete, 1); 
+  updateTable();
+  modalDelStudent.style.display = "none";
+});
+
+document.getElementById("DelCancelBtn").addEventListener('click',function(){
+  modalDelStudent.style.display ="none" ;
+});
+
+
+
+window.onclick = function(event) {
+  if (event.target == modalDelStudent) {
+    modalDelStudent.style.display = "none";
+  
+  }
+}
+
+var spanDelstud = document.getElementsByClassName("close")[1];
+spanDelstud.onclick = function() {
+  modalDelStudent.style.display = "none";
+}
+
+
+//
+//Редагування данних про студента 
+//
+var modalEdit = document.getElementById("myModalEdit");
+var spanEdit = document.getElementsByClassName("close")[2];
+var btnEdit = document.getElementsByClassName("EditStudent");
+let indexforEdit
+for (let i = 0; i < btnEdit.length; i++) {
+  btnEdit[i].onclick = function() {
+  indexforEdit= (currentPage * 4) + i ;
+  
+   
+   
+    modalEdit.style.display = "block";
+  };
+}
+
+document.getElementById("SaveBtn").addEventListener('click', function() {
+
+  editStudent();
+  
+});
+
+window.onclick = function(event) {
+  if (event.target == modalEdit) {
+    modalEdit.style.display = "none";
+  
+  }
+}
+
+spanEdit.onclick = function() {
+  modalEdit.style.display = "none";
+}
+
+
+
+
+function editStudent() {
+  // Отримання значень форми
+  let group = document.getElementById('GroupEdit').value;
+  let firstName = document.getElementById('fnameEdit').value;
+  let lastName = document.getElementById('lnameEdit').value;
+  let gender = document.getElementById('GenderEdit').value;
+  let birthday = document.getElementById('birthdayEdit').value;
+  
+  // Перевірка чи всі поля заповнені
+  if (!group || !firstName || !lastName || !gender || !birthday) {
+    alert("Не всі поля заповнено");
+    return;
+  }
+  
+  // Оновлення даних студента
+  students[indexforEdit] = {group, firstName, lastName, gender, birthday};
+
+  // Оновлення таблиці
+  updateTable();
+  alert("Дані оновлено");
+}
+
+
 
 
 // Масив студентів
@@ -29,7 +136,11 @@ function addStudent() {
   let lastName = document.getElementById('lname').value;
   let gender = document.getElementById('Gender').value;
   let birthday = document.getElementById('birthday').value;
-
+  // Перевірка чи всі поля заповнені
+  if (!group || !firstName || !lastName || !gender || !birthday) {
+    alert("Не всі поля заповнено");
+    return;
+  }
   // Створення нового студента
   let student = {group, firstName, lastName, gender, birthday};
 
@@ -121,3 +232,23 @@ document.getElementById('createBtn').addEventListener('click', function() {
   addStudent();
 });
 
+//Анімація дзвіночка 
+
+let bell = document.getElementById('BellSpan');
+let newIcon = document.createElement('img');
+newIcon.src = "assets/Notification_Bell_SVG_red_Dot.svg"; // Path to your red circle image
+newIcon.style.position = "absolute";
+newIcon.style.height = "40px";
+newIcon.style.width = "40px";
+newIcon.style.display = "none"; // Hide it initially
+newIcon.style.top="0px";
+
+bell.appendChild(newIcon);
+
+setInterval(function() {
+    if (newIcon.style.display === "none") {
+        newIcon.style.display = "block"; // Show the new icon
+    } else {
+        newIcon.style.display = "none"; // Hide the new icon
+    }
+}, 5000); // Run every 5 seconds

@@ -12,11 +12,12 @@
   
 }
 .header_buttons{
-  display: flex;
+  display:flex;
 }
 .UserName{
+  padding-left: 10px;
   font: 18px TimesNewRoman;
-padding-top: 2px;
+  vertical-align:middle ;
 }
 
 .header-profile{
@@ -26,15 +27,108 @@ padding-top: 2px;
 
 
 }
-
-
-.header_cell-notification{
-
-    color: white;
-    border: none;
-    background: none;
+/*Дзвіночок */
+#HederBell{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-top: 5px;
+  }
+  
+  #BellSpan{
+  position: relative;
+  }
+  
+  #BellMouseHoverText{
     
-}
+  position: absolute;
+  
+  top: 100%;
+  left: 0;
+  background-color: whitesmoke;
+  display: none;
+  width: 200px;
+  z-index: 1;
+  }
+  
+  #BellSpan:hover #BellMouseHoverText {
+  display: block;
+  }
+ 
+  
+  .header_cell-notification{
+  color: white;
+  border: none;
+  background: none;
+  }
+  /* Повідомлення при наведенні */
+  #Massage {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    color:black;
+    display: flex;
+    align-items:center;
+  }
+  #Massagetext {
+    min-width: 110px;
+    min-height: 30px ;
+text-align: center;
+    background-color: #aaaaaa;
+    border-radius: 10px; /* Заокруглені кути */
+    position: relative; /* Потрібно для позиціонування трикутника */
+  }
+  
+  #Massagetext::before { /* Трикутник зліва */
+    content: "";
+    position: absolute;
+    left: -6px; /* Розташування трикутника */
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #aaaaaa; /* Колір трикутника */
+  }
+
+
+  #Massage > div {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    
+  }
+  #Massage >div>p{
+    margin: 0;
+  }
+  #Massage > p  {
+    
+    margin-left: 10px;
+  }
+  
+  
+  /*----------------------Профіль наведення---------------------------*/
+  #HeaderProfileContainer{
+    padding-top: 5px;
+    position: relative; /* Додайте цей рядок */
+  }
+  
+  #ProfileMouseHoverText{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:#aaaaaa;
+    display: none;
+    width: 100px;
+    z-index: 1;
+  }
+  
+  #ProfileSpan:hover #ProfileMouseHoverText {
+    display: block;
+  }
+  
+
+
+
 
 /*мЕЙН*/
 a{text-decoration: none;
@@ -86,6 +180,7 @@ button.add{
 }
 /*Таблиця*/
 table {
+  
   position:fixed;
   right: 2%;
   left: 150px;
