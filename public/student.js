@@ -27,7 +27,7 @@ var delStudentButtons = document.getElementsByClassName("DelStudent");
 for (let i = 0; i < delStudentButtons.length; i++) {
   delStudentButtons[i].onclick = function() {
     // Get the message element
-    var message = document.getElementById("Massage");
+    var message = document.getElementById("MassageDelStud");
    
     // Set the message text
     indexfordelete = (currentPage * 4) + i ;
