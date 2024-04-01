@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <script src="/service-worker.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+async function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    console.log('deferredPrompt')
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+  }
+}
+  </script>
+  <script>
+    function installServiceWorker() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(registration => {
+            console.log('Service Worker is registered', registration);
+          })
+          .catch(err => {
+            console.error('Registration failed:', err);
+          });
+      }
+    }
+  </script>
+
+  <title>Lab-Pvi-Chychuk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="installServiceWorker()">
+  <header class="header container " >
+   <h1 class="CMS">CMS</h1>
+   <div class="header_buttons">
+    
+    <!---->
+    <!--Дзвіночок-->
+    <!---->
+    <div id="HederBell">
+      <span id="BellSpan"  class="header_cell-notification ">
+       <img src="assets/notification-bell-svgrepo-com.svg" height="40" width="40"  alt="">
+       <div id="BellMouseHoverText" >
+          <div id="Massage" >
+              <div>            
+                <img src="assets/profile-circle-svgrepo-com.svg" height="35" width="35" alt="">
+                <p id="SenderName">Степан</p>
+              </div>  
+                
+                  <p id="Massagetext">Чиназис  </p>
+                
+            </div>
+
+          <div id="Massage" >
+            <div>            
+              <img src="assets/profile-circle-svgrepo-com.svg" height="35" width="35" alt="">
+              <p id="SenderName">Андрій</p>
+            </div>  
+            <p id="Massagetext">Здоров Богдан,як справи? У нас новий проєкт, долучайся :) </p>
+        </div>
+
+        <div id="Massage" >
+          <div>            
+            <img src="assets/profile-circle-svgrepo-com.svg" height="35" width="35" alt="">
+            <p id="SenderName">Матвій</p>
+          </div>  
+          <p id="Massagetext">Саунтрес  </p>
+      </div>
+       </div>
+      </span>
+  </div>
+  
+
+  <div id="HeaderProfileContainer">
+    <span id="ProfileSpan" class="header-profile ">
+      <img src="assets/profile-circle-svgrepo-com.svg" height="40" width="40" alt="">
+      <div id="ProfileMouseHoverText" >
+        <Button style="border: none; font-size: 17px;font-family: 'Times New Roman', Times, serif;background: none;">Profile</Button>
+        <Button style="border: none; font-size: 17px;font-family: 'Times New Roman', Times, serif;background: none;">Log Out</Button>
+      </div>
+    </span>
+  </div>
+  
+  <h2 class="UserName">
+    Bohdan Chychuk
+  </h2>
+  </div>
+  </header>
+
+  <main class="main container ">
+    <div class="lrmw">
+    <div class="left_side_link_list ">
+      <a href="#" class="main_left_menu_Dashboard"> Dashboard</a>
+      <a href="#" class="main left menu Students"> Students</a>
+      <a href="#" class ="main_left_menu_Tasks"> Tasks</a>
+    </div>
+
+    <div class="right" >
+<h1 class="PageNameMain">Students</h1>
+<div class="button_add_container">
+  <button id="myBtn" class="add">+</button>
+</div>
+<div class="Table">
+  <table>
+    <tr>
+        <th><input type="checkbox"></th>
+        <th>Group</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Birthday</th>
+        <th>Status</th>
+        <th>Options</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div class="buttonin1row">
+          <button id="BtnChangeInfo1" class="EditStudent"><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+          <button id="BtnDelStudent1" class="DelStudent"><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td >
+          <div class="buttonin2row">
+            <button id="BtnChangeInfo2" class="EditStudent"><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+            <button id="BtnDelStudent2"  class="DelStudent"><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div class="buttonin3row">
+            <button id="BtnChangeInfo3" class="EditStudent"><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+            <button id="BtnDelStudent3"  class="DelStudent"><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+            </div>
+        </td>
+      </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div class="buttonin4row">
+            <button id="BtnChangeInfo4" class="EditStudent"><img src="assets/pencil-striped-symbol-for-interface-edit-buttons_icon-icons.com_56782 (1).svg" width="25px" height="25px" alt=""></button>
+            <button id="BtnDelStudent4"  class="DelStudent"><img src="assets/x-symbol-svgrepo-com.svg" alt="" width="25px" height="25px"></button>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <!--Модальне вікно додавання студента  -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" >&times;</span>
+      <h1 style="font-size: 14;">Add Student</h1>
+      <hr style="height:4px;border-width:0;color:gray;background-color:gray">
+<div class="infomodal">
+      <div class="add-group">
+          <label for="Group">Group:</label>
+            <select name="Group" id="Group">
+            <option value="PZ-27">PZ-27</option>
+            <option value="BD-24">BD-24</option>
+            <option value="KI-301">KI-301</option>
+            <option value="KI-301">PZ-26</option>
+         </select><br><br>
+      </div>
+      <div class="FName">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+      </div>
+      <div class="LName">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+      </div>
+      <div class="add-gender">
+        <label for="Gender">Gender:</label>
+          <select name="Gender" id="Gender">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+       </select><br><br>
+    </div>
+    <div class="add-birthday">
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday">
+    </div>
+   
+
+</div>
+<hr style="height:4px;border-width:0;color:gray;background-color:gray">
+<button id="createBtn" >Create</button>
+ 
+    </div>
+  </div>
+
+  <!-- Модальне вікно чи погоджуєтесь ви з видаленням студента -->
+
+  <div id="myModalDeleteStudent" class="modal">
+    <div class="modal-content">
+      <span class="close" >&times;</span>
+      <h1 style="font-size: 14;">Warning</h1>
+      <hr style="height:4px;border-width:0;color:gray;background-color:gray">
+<div class="infomodal">
+ 
+   <h2 id="MassageDelStud">Меседж</h2>
+
+</div>
+<hr style="height:4px;border-width:0;color:gray;background-color:gray">
+<button id="DeketeBtn" >Ok</button>
+<button id="DelCancelBtn" >Cancel</button>
+    </div>
+  </div>
+
+
+  <!-- Модальне вікно Редагування данних студента  -->
+  <div id="myModalEdit" class="modal">
+    <div class="modal-content">
+      <span class="close" >&times;</span>
+      <h1 style="font-size: 14;">Edit Student</h1>
+      <hr style="height:4px;border-width:0;color:gray;background-color:gray">
+  <div class="infomodal">
+      <div class="add-group">
+          <label for="Group">Group:</label>
+            <select name="Group" id="GroupEdit">
+            <option value="PZ-27">PZ-27</option>
+            <option value="BD-24">BD-24</option>
+            <option value="KI-301">KI-301</option>
+            <option value="KI-301">PZ-26</option>
+         </select><br><br>
+      </div>
+      <div class="FName">
+        <label for="fname">First name:</label>
+        <input type="text" id="fnameEdit" name="fname"><br><br>
+      </div>
+      <div class="LName">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lnameEdit" name="lname"><br><br>
+      </div>
+      <div class="add-gender">
+        <label for="Gender">Gender:</label>
+          <select name="Gender" id="GenderEdit">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+       </select><br><br>
+    </div>
+    <div class="add-birthday">
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthdayEdit" name="birthday">
+    </div>
+   
+</div>
+<hr style="height:4px;border-width:0;color:gray;background-color:gray">
+<button id="SaveBtn" >Save</button>
+ 
+    </div>
+  </div>
+
+
+
+
+  
+
+  <div class="buttons-change-table-page" style="display: flex;padding-left: 50%;padding-top: 460px;">
+    <button><</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>></button>
+    <button id="installBtn" onclick="installPWA()">Скачать</button>
+  </div>
+  </main>
+  <footer class="footer container"></footer>
+</body>
+<script src="student.js"></script>
+</html>
