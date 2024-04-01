@@ -2,12 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="manifest" href="public/manifest.json">
+  <link rel="manifest" href="/manifest.json">
+  <script src="/service-worker.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+async function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    console.log('deferredPrompt')
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+  }
+}
+  </script>
+  <script>
+    function installServiceWorker() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(registration => {
+            console.log('Service Worker is registered', registration);
+          })
+          .catch(err => {
+            console.error('Registration failed:', err);
+          });
+      }
+    }
+  </script>
+
   <title>Lab-Pvi-Chychuk</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="installServiceWorker()">
   <header class="header container " >
    <h1 class="CMS">CMS</h1>
    <div class="header_buttons">
@@ -272,6 +308,7 @@
     <button>3</button>
     <button>4</button>
     <button>></button>
+    <button id="installBtn" onclick="installPWA()">Скачать</button>
   </div>
   </main>
   <footer class="footer container"></footer>
