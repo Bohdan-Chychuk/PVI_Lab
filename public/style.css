@@ -210,12 +210,12 @@ td, th {
 
   cursor: pointer;
   font-size: 16px;
-  color: #333; /* Змініть колір за потреби */
+  color: #333; 
   
 }
 
 .icon-button i {
-  margin-right: 5px; /* Додайте деякий відступ між іконкою та текстом */
+  margin-right: 5px; 
 }
 
 .buttonin1row,.buttonin2row,.buttonin3row,.buttonin4row{
@@ -232,7 +232,7 @@ td, th {
   top: 0;
   width: 100%; /* Повна ширина */
   height: 100%; /* Повна висота */
-  overflow: auto; /* Додайте прокрутку, якщо потрібно */
+  overflow: auto; 
   background-color: rgb(0,0,0); /* Чорний з невеликим прозорим фоном */
   background-color: rgba(0,0,0,0.4); /* Чорний з невеликим прозорим фоном */
 }
@@ -266,15 +266,15 @@ td, th {
   flex-direction: column;
 }
 #Group {
-  width: 120px;  /* Змініть на бажану ширину */
-  height: 20px;  /* Змініть на бажану висоту */
+  width: 120px;  
+  height: 20px;  
 }
-#fname{ width: 120px;  /* Змініть на бажану ширину */
-  height: 15px;  /* Змініть на бажану висоту */}
-#lname{ width: 120px;  /* Змініть на бажану ширину */
-    height: 15px;  /* Змініть на бажану висоту */}
+#fname{ width: 120px;  
+  height: 15px; }
+#lname{ width: 120px; 
+    height: 15px;  }
   
-#Gender{ width: 120px;  /* Змініть на бажану ширину */
-  height: 20px;  /* Змініть на бажану висоту */}
+#Gender{ width: 120px;  
+  height: 20px;  }
 
-  /*Кнопки навігацфя таблиці*/
+  

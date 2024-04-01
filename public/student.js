@@ -236,19 +236,19 @@ document.getElementById('createBtn').addEventListener('click', function() {
 
 let bell = document.getElementById('BellSpan');
 let newIcon = document.createElement('img');
-newIcon.src = "assets/Notification_Bell_SVG_red_Dot.svg"; // Path to your red circle image
+newIcon.src = "assets/Notification_Bell_SVG_red_Dot.svg";
 newIcon.style.position = "absolute";
 newIcon.style.height = "40px";
 newIcon.style.width = "40px";
-newIcon.style.display = "none"; // Hide it initially
+newIcon.style.display = "none"; 
 newIcon.style.top="0px";
 
 bell.appendChild(newIcon);
 
 setInterval(function() {
     if (newIcon.style.display === "none") {
-        newIcon.style.display = "block"; // Show the new icon
+        newIcon.style.display = "block"; // Show 
     } else {
-        newIcon.style.display = "none"; // Hide the new icon
+        newIcon.style.display = "none"; // Hide 
     }
-}, 5000); // Run every 5 seconds
+}, 1000); //5 sec

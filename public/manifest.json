@@ -1,0 +1,14 @@
+{
+  "background_color": "#dfee01",
+  "display": "standalone",
+  "name": "Pvi_Chychuk_Lab",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Pvi_Chychuk_Lab",
+  "start_url": "https://pvi-lab-1-bohdan-chychuk-da36b4579c2195304deb4cd1cc8a9f97b44786.gitlab.io",
+  "theme_color": "#ff5959",
+  "id": "Pvi_Chychuk_Lab_2",
+  "description": "MyPWAProgram",
+  "dir": "auto",
+  "lang": "uk"
+}
